@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shawrktestcicdpipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shawrktestcicdpipeline
+  template:
+    metadata:
+      labels:
+        app: shawrktestcicdpipeline 
+    spec:
+      containers:
+        - name: shawrktestcicdpipeline 
+          image: azurecicdcontainerregistry.azurecr.io/shawrktestcicdpipeline
+          ports:
+          - containerPort: 5000
